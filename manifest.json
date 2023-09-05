@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "og-broadcast",
+    "description": "Og external broadcaster",
+    "host_permissions": ["https://*.ogame.gameforge.com/game/*"],
+    "version": "1.0",
+    "permissions": [
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "js/background.js"
+    },
+    "content_scripts": [
+      {
+        "css": ["css/global.css"],
+        "js": ["js/message.js"],
+        "matches": ["https://*.ogame.gameforge.com/game/index.php?page=messages"],
+        "run_at": "document_start"
+      }
+    ]
+  }
